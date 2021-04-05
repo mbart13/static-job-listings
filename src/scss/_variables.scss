@@ -1,6 +1,10 @@
-$color-primary: hsl(180, 29%, 50%);
+$color-primary: hsl(180, 29%, 50%); //#5ca5a5 in figma
 $color-bg: hsl(180, 52%, 96%);
-$light-cyan: hsl(180, 31%, 95%);
-$dark-cyan-10: hsl(180, 8%, 52%);
-$dark-cyan-20: hsl(180, 14%, 20%);
+$color-light-cyan: hsl(180, 31%, 95%);
+$color-dark-cyan-10: hsl(180, 8%, 52%);
+$color-dark-cyan-20: hsl(180, 14%, 20%);
+$color-white: #fff;
 $font-family: 'Spartan', sans-serif;
+$transition: all .2s linear;
+$border-radius: 5px;
+$breakpoints-up: ("medium": "62rem", "large" : "63.75rem", "extra-large": "82rem");

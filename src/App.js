@@ -1,9 +1,15 @@
+import React from 'react'
 
+import Footer from 'components/Footer/Footer'
+import JobListingsWrapper from 'components/JobList/JobList'
 
 function App() {
   return (
-    <h1>Hello</h1>
-  );
+    <div className="main-wrapper">
+      <JobListingsWrapper />
+      <Footer />
+    </div>
+  )
 }
 
-export default App;
+export default App

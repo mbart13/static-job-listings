@@ -18,8 +18,6 @@ h2,
 h3,
 h4,
 p,
-ul[class],
-ol[class],
 figure,
 blockquote,
 dl,
@@ -62,7 +60,7 @@ select {
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+  	scroll-behavior: auto;
   }
 
   *,
