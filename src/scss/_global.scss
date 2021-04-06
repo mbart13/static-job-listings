@@ -25,7 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1.5rem;
   @include breakpoint-up(medium) {
     max-width: 69.37rem;
     margin: 0 auto;

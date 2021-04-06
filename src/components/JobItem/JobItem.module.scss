@@ -6,12 +6,16 @@
   padding: 1.2rem;
   border-radius: $border-radius;
   position: relative;
+  box-shadow: 0 .9375rem 1.25rem -.3125rem rgba(#0D7182, .15);
+  margin-bottom: 2.5rem;
 
   @include breakpoint-up(medium) {
     padding: 2rem;
     display: flex;
+    gap: 2rem;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -60,6 +64,10 @@
 .companyName {
   font-size: .8125rem;
   font-weight: bold;
+
+  @include breakpoint-up(medium) {
+    font-size: .875rem;
+  }
 }
 
 .features {
@@ -85,6 +93,10 @@
   color: $color-dark-cyan-20;
   font-size: .9375rem;
   margin-bottom: .6rem;
+
+  @include breakpoint-up(medium) {
+    font-size: 1.125rem;
+  }
 }
 
 .information {
@@ -107,6 +119,7 @@
 
     @include breakpoint-up(medium) {
       margin-right: 2rem;
+      font-size: .9375rem;
     }
 
     &:not(:last-child)::after {
@@ -159,6 +172,6 @@
   background-color: $color-primary;
 }
 
-.featured {
+.isFeatured {
   border-left: 5px solid $color-primary;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './JobItem.module.scss'
 
-const JobItem = () => {
+const JobItem = ({ job }) => {
   const data = {
     id: 1,
     company: 'Photosnap',
@@ -20,27 +20,27 @@ const JobItem = () => {
   }
 
   return (
-    <article className={[styles.wrapper, styles.featured].join(' ')}>
+    <article className={[styles.wrapper, styles.isFeatured].join(' ')}>
       <section className={styles.details}>
         <h2 className="sr-only">Job Details</h2>
         <div className={styles.companyLogo}>
-          <img src={data.logo} alt={data.company} />
+          <img src={job.logo} alt={job.company} />
         </div>
         <div className={styles.infoWrapper}>
           <div className={styles.companyFeaturesWrapper}>
-            <p className={styles.companyName}>{data.company}</p>
+            <p className={styles.companyName}>{job.company}</p>
             <div className={styles.features}>
               <span>new!</span>
               <span>featured</span>
             </div>
           </div>
-          <h3 className={styles.position}>{data.position}</h3>
+          <h3 className={styles.position}>{job.position}</h3>
           <section>
             <h3 className="sr-only">Job information</h3>
             <ul className={styles.information}>
-              <li>{data.postedAt}</li>
-              <li>{data.contract}</li>
-              <li>{data.location}</li>
+              <li>{job.postedAt}</li>
+              <li>{job.contract}</li>
+              <li>{job.location}</li>
             </ul>
           </section>
         </div>
@@ -49,10 +49,12 @@ const JobItem = () => {
       <section>
         <h3 className="sr-only">Filter Categories</h3>
         <div className={styles.categories}>
-          <button className={styles.tablet}>{data.role}</button>
-          <button className={styles.tablet}>{data.level}</button>
-          {data.languages.map((language) => (
-            <button className={styles.tablet}>{language}</button>
+          <button className={styles.tablet}>{job.role}</button>
+          <button className={styles.tablet}>{job.level}</button>
+          {job.languages.map((language, index) => (
+            <button key={index} className={styles.tablet}>
+              {language}
+            </button>
           ))}
         </div>
       </section>
