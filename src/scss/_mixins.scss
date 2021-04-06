@@ -1,8 +1,18 @@
-@use './variables';
+@use './variables' as *;
 @use 'sass:map';
 
 @mixin breakpoint-up($size) {
-  @media (min-width: map.get(variables.$breakpoints-up, $size )) {
+  @media (min-width: map.get($breakpoints-up, $size )) {
       @content;
   }
+}
+
+%tablet {
+  background-color: $color-light-cyan;
+  border: none;
+  padding: 0.4rem .5rem .2rem;
+  color: $color-primary;
+  border-radius: $border-radius;
+  font-size: .8125rem;
+  font-weight: bold;
 }

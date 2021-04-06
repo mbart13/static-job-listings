@@ -1,0 +1,11 @@
+@use 'scss/variables' as *;
+
+.feature {
+  padding: 0.4rem 0.5rem 0.2rem;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 3rem;
+  display: inline-block;
+  font-weight: bold;
+  font-size: .6875rem;
+}

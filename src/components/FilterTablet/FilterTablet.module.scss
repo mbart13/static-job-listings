@@ -1,0 +1,29 @@
+@use 'scss/mixins' as *;
+@use 'scss/variables' as *;
+
+.wrapper {
+  display: inline-flex;
+}
+
+.filterTablet {
+  @extend %tablet;
+  border-bottom-right-radius: unset;
+  border-top-right-radius: unset;
+}
+
+.removeBtn {
+  background-color: $color-primary;
+  border: transparent;
+  border-bottom-right-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  padding: .4rem;
+
+  &:hover {
+    background-color: $color-dark-cyan-20;
+    cursor: pointer;
+  }
+
+  & > img {
+    color: $color-white;
+  }
+}

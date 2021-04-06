@@ -1,0 +1,20 @@
+@use 'scss/variables' as *;
+@use 'scss/mixins' as *;
+
+.categories {
+  padding-top: .6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tablet {
+  @extend %tablet;
+  transition: $transition;
+}
+
+.tablet:hover {
+  cursor: pointer;
+  color: $color-white;
+  background-color: $color-primary;
+}

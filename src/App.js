@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Footer from 'components/Footer/Footer'
 import JobList from 'components/JobList/JobList'
 import fetchJobs from 'helpers/api'
+import Filters from 'components/Filters/Filters'
 
 function App() {
   const [jobs, setJobs] = useState([])
@@ -13,7 +14,11 @@ function App() {
 
   return (
     <div className="main-wrapper">
-      <JobList jobs={jobs} />
+      <h1 className="sr-only">Job Listings</h1>
+      <main>
+        <Filters />
+        <JobList jobs={jobs} />
+      </main>
       <Footer />
     </div>
   )

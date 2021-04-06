@@ -1,63 +1,21 @@
 import React from 'react'
 
+import CategoriesList from 'components/CategoriesList/CategoriesList'
 import styles from './JobItem.module.scss'
+import JobDetails from 'components/JobDetails/JobDetails'
 
-const JobItem = ({ job }) => {
-  const data = {
-    id: 1,
-    company: 'Photosnap',
-    logo: './assets/images/photosnap.svg',
-    new: true,
-    featured: true,
-    position: 'Senior Frontend Developer',
-    role: 'Frontend',
-    level: 'Senior',
-    postedAt: '1d ago',
-    contract: 'Full Time',
-    location: 'USA Only',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-    tools: [],
-  }
-
+const JobItem = ({ job, filters }) => {
   return (
-    <article className={[styles.wrapper, styles.isFeatured].join(' ')}>
-      <section className={styles.details}>
-        <h2 className="sr-only">Job Details</h2>
-        <div className={styles.companyLogo}>
-          <img src={job.logo} alt={job.company} />
-        </div>
-        <div className={styles.infoWrapper}>
-          <div className={styles.companyFeaturesWrapper}>
-            <p className={styles.companyName}>{job.company}</p>
-            <div className={styles.features}>
-              <span>new!</span>
-              <span>featured</span>
-            </div>
-          </div>
-          <h3 className={styles.position}>{job.position}</h3>
-          <section>
-            <h3 className="sr-only">Job information</h3>
-            <ul className={styles.information}>
-              <li>{job.postedAt}</li>
-              <li>{job.contract}</li>
-              <li>{job.location}</li>
-            </ul>
-          </section>
-        </div>
-      </section>
+    <article
+      className={
+        job.featured
+          ? `${styles.wrapper} ${styles.isFeatured}`
+          : `${styles.wrapper}`
+      }
+    >
+      <JobDetails job={job} />
       <hr className={styles.divider} />
-      <section>
-        <h3 className="sr-only">Filter Categories</h3>
-        <div className={styles.categories}>
-          <button className={styles.tablet}>{job.role}</button>
-          <button className={styles.tablet}>{job.level}</button>
-          {job.languages.map((language, index) => (
-            <button key={index} className={styles.tablet}>
-              {language}
-            </button>
-          ))}
-        </div>
-      </section>
+      <CategoriesList filters={filters} />
     </article>
   )
 }

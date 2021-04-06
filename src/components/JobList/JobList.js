@@ -5,12 +5,17 @@ import styles from './JobList.module.scss'
 
 const JobList = ({ jobs }) => {
   return (
-    <main>
-      <h1 className="sr-only">Job Listings</h1>
-      {jobs.map((job) => (
-        <JobItem key={job.id} job={job} />
-      ))}
-    </main>
+    <section className={styles.jobList}>
+      {jobs.map((job) => {
+        return (
+          <JobItem
+            key={job.id}
+            job={job}
+            filters={[job.role, job.level, ...job.languages, ...job.tools]}
+          />
+        )
+      })}
+    </section>
   )
 }
 

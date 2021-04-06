@@ -1,0 +1,9 @@
+@use 'scss/mixins' as *;
+
+.jobList {
+  padding-top: 3rem;
+
+  @include breakpoint-up(medium) {
+    padding-top: 2rem;
+  }
+}

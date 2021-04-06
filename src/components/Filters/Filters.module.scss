@@ -1,0 +1,33 @@
+@use 'scss/variables' as *;
+
+.wrapper {
+  background-color: $color-white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: -3.5rem;
+  box-shadow: $box-shadow;
+}
+
+.buttonsWrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.buttonClear {
+  border: transparent;
+  background-color: transparent;
+  color: $color-dark-cyan-10;
+  font-size: .8125rem;
+  font-weight: bold;
+  padding: 0;
+
+  &:hover {
+    text-decoration: underline;
+    color: $color-primary;
+    cursor: pointer;
+  }
+}
