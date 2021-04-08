@@ -4,7 +4,7 @@ import CategoriesList from 'components/CategoriesList/CategoriesList'
 import styles from './JobItem.module.scss'
 import JobDetails from 'components/JobDetails/JobDetails'
 
-const JobItem = ({ job, filters }) => {
+const JobItem = ({ job }) => {
   return (
     <article
       className={
@@ -13,9 +13,9 @@ const JobItem = ({ job, filters }) => {
           : `${styles.wrapper}`
       }
     >
-      <JobDetails job={job} />
+      <JobDetails {...job} />
       <hr className={styles.divider} />
-      <CategoriesList filters={filters} />
+      <CategoriesList filters={job.filterCategories} />
     </article>
   )
 }
