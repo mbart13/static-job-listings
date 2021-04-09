@@ -57,3 +57,7 @@ body::after{
   url('../assets/images/bg-header-mobile.svg')
   url('../assets/images/bg-header-desktop.svg');
 }
+
+button:focus {
+  outline: 2px dotted $color-primary;
+}

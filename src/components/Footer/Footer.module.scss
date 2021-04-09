@@ -1,12 +1,15 @@
+@use 'scss/variables' as *;
+
 .attribution {
   padding: 1rem;
   font-size: .7rem;
-  color: hsl(228, 45%, 44%);
   text-align: center;
+  color: $color-dark-cyan-10;
 }
 
 a {
   text-decoration: none;
+  color: $color-primary;
 }
 
 a:hover {

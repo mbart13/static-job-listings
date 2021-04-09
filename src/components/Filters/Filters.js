@@ -18,7 +18,7 @@ const Filters = ({ filters, dispatch }) => {
       </div>
       <button
         className={styles.buttonClear}
-        onClick={() => dispatch({ type: 'CLEAR_ALL' })}
+        onClick={() => dispatch({ type: 'CLEAR_FILTERS' })}
       >
         Clear
       </button>

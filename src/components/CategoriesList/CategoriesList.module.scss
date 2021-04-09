@@ -1,6 +1,7 @@
 @use 'scss/variables' as *;
 @use 'scss/mixins' as *;
 
+
 .categories {
   padding-top: .6rem;
   display: flex;
@@ -10,7 +11,7 @@
 
 .tablet {
   @extend %tablet;
-  transition: $transition;
+  transition: color .2s linear, background-color .2s linear;
 }
 
 .tablet:hover {

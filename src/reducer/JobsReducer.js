@@ -10,7 +10,7 @@ const JobsReducer = (state, action) => {
         ]
         return job
       })
-      return { ...state, jobs }
+      return { ...state, jobs, isLoading: false, isError: false }
 
     case 'ADD_FILTER':
       if (!state.filters.includes(action.payload)) {
@@ -29,8 +29,11 @@ const JobsReducer = (state, action) => {
         filters: newFilters,
       }
 
-    case 'CLEAR_ALL':
+    case 'CLEAR_FILTERS':
       return { ...state, filters: [] }
+
+    case 'ERROR':
+      return { ...state, isError: true, isLoading: false }
 
     default:
       return state

@@ -3,8 +3,20 @@ import { connect } from 'react-redux'
 
 import JobItem from 'components/JobItem/JobItem'
 import styles from './JobList.module.scss'
+import Spinner from 'components/spinner/Spinner'
 
-const JobList = ({ jobs }) => {
+const JobList = ({ jobs, isError, isLoading }) => {
+  if (isLoading) {
+    return <Spinner />
+  }
+
+  if (isError) {
+    return (
+      <h2 style={{ textAlign: 'center' }}>
+        Something went wrong, please try to refresh the page
+      </h2>
+    )
+  }
   return (
     <section className={styles.jobList}>
       {jobs.map((job) => {
@@ -15,13 +27,13 @@ const JobList = ({ jobs }) => {
 }
 
 const mapStateToProps = (state) => {
-  const { jobs, filters } = state
+  const { jobs, filters, isError, isLoading } = state
 
   const filteredJobs = jobs.filter((job) => {
     return filters.every((item) => job.filterCategories.includes(item))
   })
 
-  return { jobs: filteredJobs }
+  return { jobs: filteredJobs, isError, isLoading }
 }
 
 export default connect(mapStateToProps)(JobList)

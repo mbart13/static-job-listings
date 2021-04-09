@@ -8,18 +8,23 @@ import Filters from 'components/Filters/Filters'
 import JobsReducer from 'reducer/JobsReducer'
 
 const initialState = {
+  isLoading: true,
+  isError: false,
   filters: [],
   jobs: [],
-  filteredJobs: [],
 }
 
 const store = createStore(JobsReducer, initialState)
 
 function App() {
   useEffect(() => {
-    fetchJobs().then((data) => {
-      store.dispatch({ type: 'DISPLAY_JOBS', payload: data })
-    })
+    fetchJobs()
+      .then((data) => {
+        store.dispatch({ type: 'DISPLAY_JOBS', payload: data })
+      })
+      .catch(() => {
+        store.dispatch({ type: 'ERROR' })
+      })
   }, [])
 
   return (
@@ -35,12 +40,5 @@ function App() {
     </Provider>
   )
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     displayJobs: (data) =>
-//       dispatch({ type: 'DISPLAY_JOBS', payload: { data } }),
-//   }
-// }
 
 export default App
