@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import JobItem from 'components/JobItem/JobItem'
 import styles from './JobList.module.scss'
-import Spinner from 'components/spinner/Spinner'
+import Spinner from 'components/Spinner/Spinner'
 
 const JobList = ({ jobs, isError, isLoading }) => {
   if (isLoading) {
