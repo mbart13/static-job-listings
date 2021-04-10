@@ -7,7 +7,7 @@ import removeIcon from 'assets/images/icon-remove.svg'
 const FilterTablet = ({ children, removeFilter }) => {
   return (
     <div className={styles.wrapper}>
-      <span className={styles.filterTablet}>{children}</span>
+      <p className={styles.filterTablet}>{children}</p>
       <button
         className={styles.removeBtn}
         aria-label="remove filter"

@@ -47,7 +47,7 @@ This is my first time with Redux, obviously I could have used Context API and ho
 
 The most challenging part was filtering based on multiple criteria. I achieved this with Array.filter() and Array.every() in the mapStateToProps method and I think it looks short and elegant :)
 
-```js
+```js 
 const mapStateToProps = (state) => {
   const { jobs, filters, isError, isLoading } = state
 
