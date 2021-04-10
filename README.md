@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 
 ### Links
@@ -43,11 +43,11 @@ You can check Live Site URL [here](https://static-job-listings-mbart13.vercel.ap
 
 To make this project more realistic, I decided to fetch jobs data from server. For this I created my own API using Vercel serverless function.
 
-This is my first time with Redux, obviously I could have used Context API and hooks like in some projects before, but I wanted to get familiar with this library and lingo associated with it. 
+This is my first time with Redux, obviously I could have used Context API and hooks like in some projects before, but I wanted to get familiar with this library and lingo associated with it.
 
 The most challenging part was filtering based on multiple criteria. I achieved this with Array.filter() and Array.every() in the mapStateToProps method and I think it looks short and elegant :)
 
-```
+```js
 const mapStateToProps = (state) => {
   const { jobs, filters, isError, isLoading } = state
 
