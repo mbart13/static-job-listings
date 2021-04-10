@@ -59,7 +59,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(JobList)
-}
 ```
 
 ### Useful resources
