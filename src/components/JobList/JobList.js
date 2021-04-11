@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import JobItem from 'components/JobItem/JobItem'
 import styles from './JobList.module.scss'
@@ -34,6 +35,12 @@ const mapStateToProps = (state) => {
   })
 
   return { jobs: filteredJobs, isError, isLoading }
+}
+
+JobList.propTypes = {
+  jobs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  isError: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
 }
 
 export default connect(mapStateToProps)(JobList)
