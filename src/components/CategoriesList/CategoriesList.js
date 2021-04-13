@@ -6,8 +6,8 @@ import styles from './CategoriesList.module.scss'
 
 const CategoriesList = ({ filterCategories, addFilter }) => {
   return (
-    <section>
-      <h3 className="sr-only">Filter Categories</h3>
+    <div>
+      <h2 className="sr-only">Filter Categories</h2>
       <div className={styles.categories}>
         {filterCategories.map((filter, index) => (
           <button
@@ -19,7 +19,7 @@ const CategoriesList = ({ filterCategories, addFilter }) => {
           </button>
         ))}
       </div>
-    </section>
+    </div>
   )
 }
 

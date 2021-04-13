@@ -8,7 +8,7 @@ import Spinner from 'components/Spinner/Spinner'
 
 const JobList = ({ jobs, isError, isLoading }) => {
   if (isLoading) {
-    return <Spinner />
+    return <Spinner aria-label="Loading" aria-hidden={false} />
   }
 
   if (isError) {

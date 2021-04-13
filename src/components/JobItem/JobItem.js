@@ -14,7 +14,6 @@ const JobItem = ({ job }) => {
           : `${styles.wrapper}`
       }
     >
-      <h2 className="sr-only">{job.position}</h2>
       <JobDetails {...job} />
       <hr className={styles.divider} />
       <CategoriesList filterCategories={job.filterCategories} />

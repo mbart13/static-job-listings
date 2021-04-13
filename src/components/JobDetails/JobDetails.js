@@ -14,10 +14,9 @@ const JobDetails = ({
   location,
 }) => {
   return (
-    <section className={styles.details}>
-      <h2 className="sr-only">Job Details</h2>
+    <div className={styles.details}>
       <div className={styles.companyLogo}>
-        <img src={logo} alt={company} />
+        <img src={logo} alt="" aria-hidden="true" />
       </div>
       <div className={styles.infoWrapper}>
         <div className={styles.companyFeaturesWrapper}>
@@ -31,17 +30,16 @@ const JobDetails = ({
             )}
           </div>
         </div>
-        <h3 className={styles.position}>{position}</h3>
-        <section>
-          <h3 className="sr-only">Job information</h3>
+        <h2 className={styles.position}>{position}</h2>
+        <div>
           <ul className={styles.information}>
             <li>{postedAt}</li>
             <li>{contract}</li>
             <li>{location}</li>
           </ul>
-        </section>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
 
