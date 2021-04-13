@@ -11,6 +11,10 @@ a {
   color: $color-surfie-green;
 }
 
+a:visited, a:active {
+  color: $color-scampi;
+}
+
 a:hover {
   text-decoration: underline;
 }
