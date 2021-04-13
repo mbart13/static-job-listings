@@ -3,7 +3,7 @@
 
 .wrapper {
   display: inline-flex;
-  animation: fadeIn .5s ease;
+  animation: fadeIn .3s ease;
 }
 
 @keyframes fadeIn {
@@ -15,6 +15,9 @@
   }
 }
 
+.filterTablet, .removeBtn  {
+  flex: 0 0 auto;
+}
 
 .filterTablet {
   @extend %tablet;
@@ -28,6 +31,7 @@
   border-bottom-right-radius: $border-radius;
   border-top-right-radius: $border-radius;
   padding: .4rem;
+
 
   &:hover {
     background-color: $color-dark-cyan-20;

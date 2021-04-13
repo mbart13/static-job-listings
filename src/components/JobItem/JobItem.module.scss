@@ -28,30 +28,6 @@
   }
 }
 
-// .categories {
-//   padding-top: .6rem;
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 1rem;
-// }
-
-// .tablet {
-//   background-color: $color-light-cyan;
-//   border: none;
-//   padding: 0.4rem .5rem .2rem;
-//   color: $color-primary;
-//   border-radius: $border-radius;
-//   font-size: .8125rem;
-//   font-weight: bold;
-//   transition: $transition;
-// }
-
-// .tablet:hover {
-//   cursor: pointer;
-//   color: $color-white;
-//   background-color: $color-primary;
-// }
-
 .isFeatured {
   border-left: 5px solid $color-primary;
 }
