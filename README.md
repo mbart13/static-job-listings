@@ -11,6 +11,7 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Useful resources](#useful-resources)
+- [Setup](#setup)
 - [Author](#author)
 
 ## Overview
@@ -65,6 +66,13 @@ export default connect(mapStateToProps)(JobList)
 
 - [Build and deploy API with Vercel](https://frontend-devops.com/blog/build-deploy-a-vercel-api) - This article helped me set up a serverless function with Vercel CLI
 
+
+## Setup
+To run this project, install it locally using npm:
+
+```
+npm install && npm start
+```
 
 ## Author
 
