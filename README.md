@@ -57,17 +57,14 @@ const filteredJobs = jobs.filter((job) => {
 
 - [Build and deploy API with Vercel](https://frontend-devops.com/blog/build-deploy-a-vercel-api) - This article helped me set up a serverless function with Vercel CLI
 
-<<<<<<< HEAD
-=======
-
 ## Setup
+
 To run this project, install it locally using npm:
 
 ```
 npm install && npm start
 ```
 
->>>>>>> f61defb0387cf539278606f7ed998d172f69a109
 ## Author
 
 - Frontend Mentor - [@mbart13](https://www.frontendmentor.io/profile/mbart13)
