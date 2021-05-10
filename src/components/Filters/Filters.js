@@ -1,11 +1,14 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import FilterTablet from 'components/FilterTablet/FilterTablet'
 import styles from './Filters.module.scss'
 
-const Filters = ({ filters, dispatch }) => {
+const Filters = () => {
+  const { filters } = useSelector((state) => state)
+  const dispatch = useDispatch()
+
   if (!filters.length) {
     return null
   }
@@ -27,13 +30,9 @@ const Filters = ({ filters, dispatch }) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return { filters: state.filters }
-}
-
 Filters.propTypes = {
   filters: PropTypes.arrayOf(PropTypes.string),
   dispatch: PropTypes.func,
 }
 
-export default connect(mapStateToProps)(Filters)
+export default Filters

@@ -1,12 +1,18 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import JobItem from 'components/JobItem/JobItem'
 import styles from './JobList.module.scss'
 import Spinner from 'components/Spinner/Spinner'
 
-const JobList = ({ jobs, isError, isLoading }) => {
+const JobList = () => {
+  const { jobs, filters, isError, isLoading } = useSelector((state) => state)
+
+  const filteredJobs = jobs.filter((job) => {
+    return filters.every((item) => job.filterCategories.includes(item))
+  })
+
   if (isLoading) {
     return <Spinner aria-label="Loading" aria-hidden={isLoading} />
   }
@@ -20,21 +26,11 @@ const JobList = ({ jobs, isError, isLoading }) => {
   }
   return (
     <section className={styles.jobList}>
-      {jobs.map((job) => {
+      {filteredJobs.map((job) => {
         return <JobItem key={job.id} job={job} />
       })}
     </section>
   )
-}
-
-const mapStateToProps = (state) => {
-  const { jobs, filters, isError, isLoading } = state
-
-  const filteredJobs = jobs.filter((job) => {
-    return filters.every((item) => job.filterCategories.includes(item))
-  })
-
-  return { jobs: filteredJobs, isError, isLoading }
 }
 
 JobList.propTypes = {
@@ -43,4 +39,4 @@ JobList.propTypes = {
   isLoading: PropTypes.bool.isRequired,
 }
 
-export default connect(mapStateToProps)(JobList)
+export default JobList

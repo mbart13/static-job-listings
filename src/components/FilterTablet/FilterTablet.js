@@ -1,10 +1,15 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import styles from './FilterTablet.module.scss'
 import removeIcon from 'assets/images/icon-remove.svg'
 
-const FilterTablet = ({ children, removeFilter }) => {
+const FilterTablet = ({ children }) => {
+  const dispatch = useDispatch()
+
+  const removeFilter = (filter) =>
+    dispatch({ type: 'REMOVE_FILTER', payload: filter })
+
   return (
     <div className={styles.wrapper}>
       <p className={styles.filterTablet}>{children}</p>
@@ -19,11 +24,4 @@ const FilterTablet = ({ children, removeFilter }) => {
   )
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeFilter: (filter) =>
-      dispatch({ type: 'REMOVE_FILTER', payload: filter }),
-  }
-}
-
-export default connect(null, mapDispatchToProps)(FilterTablet)
+export default FilterTablet

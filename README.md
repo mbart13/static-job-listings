@@ -27,7 +27,6 @@ Users should be able to:
 
 ![](./screenshot.png)
 
-
 ### Links
 
 You can check Live Site URL [here](https://static-job-listings-mbart13.vercel.app/)
@@ -45,28 +44,18 @@ To make this project more realistic, I decided to fetch jobs data from server. F
 
 This is my first time with Redux, obviously I could have used Context API and hooks like in some projects before, but I wanted to get familiar with this library and lingo associated with it.
 
-The most challenging part was filtering based on multiple criteria. I achieved this with Array.filter() and Array.every() in the mapStateToProps method and I think it looks short and elegant :)
+The most challenging part was filtering based on multiple criteria. I achieved this with Array.filter() and Array.every() in the JobList method and I think it's concise and elegant.
 
-```js 
-const mapStateToProps = (state) => {
-  const { jobs, filters, isError, isLoading } = state
-
-  const filteredJobs = jobs.filter((job) => {
-    return filters.every((item) => job.filterCategories.includes(item))
-  })
-
-  return { jobs: filteredJobs, isError, isLoading }
-}
-
-export default connect(mapStateToProps)(JobList)
+```js
+const filteredJobs = jobs.filter((job) => {
+  return filters.every((item) => job.filterCategories.includes(item))
+})
 ```
 
 ### Useful resources
 
 - [Build and deploy API with Vercel](https://frontend-devops.com/blog/build-deploy-a-vercel-api) - This article helped me set up a serverless function with Vercel CLI
 
-
 ## Author
 
 - Frontend Mentor - [@mbart13](https://www.frontendmentor.io/profile/mbart13)
-

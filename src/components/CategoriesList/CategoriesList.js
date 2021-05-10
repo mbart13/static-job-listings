@@ -1,10 +1,14 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import styles from './CategoriesList.module.scss'
 
-const CategoriesList = ({ filterCategories, addFilter }) => {
+const CategoriesList = ({ filterCategories }) => {
+  const dispatch = useDispatch()
+
+  const addFilter = (filter) =>
+    dispatch({ type: 'ADD_FILTER', payload: filter })
   return (
     <div>
       <h2 className="sr-only">Filter Categories</h2>
@@ -23,15 +27,9 @@ const CategoriesList = ({ filterCategories, addFilter }) => {
   )
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addFilter: (filter) => dispatch({ type: 'ADD_FILTER', payload: filter }),
-  }
-}
-
 CategoriesList.propTypes = {
   filters: PropTypes.arrayOf(PropTypes.string),
   addFilter: PropTypes.func,
 }
 
-export default connect(null, mapDispatchToProps)(CategoriesList)
+export default CategoriesList
